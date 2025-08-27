@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     // component cash
-    Transform tr;
+    [SerializeField] Transform tr;
+    [SerializeField] float moveSpeed = 10.0f;
     void Start()
     {
         // Get Component
@@ -24,6 +25,9 @@ public class PlayerCtrl : MonoBehaviour
         // Transform.position
         //transform.position += new Vector3(0, 0, 1);
         // normalized vector
-        tr.position += Vector3.forward * 1;
+        //tr.position += Vector3.forward * 1;
+        tr.Translate(
+            Vector3.forward * Time.deltaTime * v * moveSpeed,
+            Space.Self);
     }
 }
