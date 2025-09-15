@@ -12,7 +12,7 @@ public class PlayerCtrl : MonoBehaviour
     Animation anim;
     [SerializeField] float moveSpeed = 10.0f;
     [SerializeField] float turnSpeed = 80.0f;
-    void Start()
+    IEnumerator Start()
     {
         // Get Component
         //tr = this.gameObject.GetComponent<Transform>();
@@ -24,6 +24,10 @@ public class PlayerCtrl : MonoBehaviour
         //anim.clip = anim.GetClip("Idle");
         //anim.Play();
         anim.Play("Idle");
+
+        turnSpeed = 0.0f;
+        yield return new WaitForSeconds(0.3f);
+        turnSpeed = 80.0f;
     }
 
     void Update()
