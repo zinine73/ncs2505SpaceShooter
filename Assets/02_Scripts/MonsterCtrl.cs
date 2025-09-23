@@ -22,6 +22,7 @@ public class MonsterCtrl : MonoBehaviour
     Transform playerTr;
     NavMeshAgent agent;
     Animator anim;
+    GameObject bloodEffect; // 혈흔 효과 프리팹
     void Start()
     {
         // monsterTr
@@ -32,9 +33,8 @@ public class MonsterCtrl : MonoBehaviour
         // agent
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        // start trace
-        //agent.destination = playerTr.position;
-        //agent.SetDestination(playerTr.position);
+        // bloodEffect prefab load
+        bloodEffect = Resources.Load<GameObject>("BloodSprayEffect");
 
         // 몬스터의 상태를 체크하는 코루틴
         StartCoroutine(CheckMonsterState());
@@ -97,8 +97,20 @@ public class MonsterCtrl : MonoBehaviour
             Destroy(collision.gameObject);
             // 피격 에니메이션 실행
             anim.SetTrigger(hashHit);
+            // 총알의 충돌지점
+            Vector3 pos = collision.GetContact(0).point;
+            Quaternion rot = Quaternion.LookRotation(-collision.GetContact(0).normal);
+            // bloodEffect 발생
+            ShowBloodEffect(pos, rot);
         }
     }
+
+    void ShowBloodEffect(Vector3 pos, Quaternion rot)
+    {
+        GameObject blood = Instantiate<GameObject>(bloodEffect, pos, rot, monsterTr);
+        Destroy(blood, 1.0f);
+    }
+
     void OnDrawGizmos()
     {
         if (state == State.TRACE)

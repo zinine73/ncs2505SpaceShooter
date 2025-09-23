@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class FireCtrl : MonoBehaviour
 {
+    public Transform bulletCreateTr;
     public GameObject bullet;
     public Transform firePos;
     public AudioClip fireSfx;
@@ -30,7 +31,7 @@ public class FireCtrl : MonoBehaviour
     void Fire()
     {
         // Bullet prefab을 동적으로 생성
-        Instantiate(bullet, firePos.position, firePos.rotation);
+        Instantiate(bullet, firePos.position, firePos.rotation, bulletCreateTr);
         audio.PlayOneShot(fireSfx, 1.0f);
         StartCoroutine(ShowMuzzleFlash());
     }

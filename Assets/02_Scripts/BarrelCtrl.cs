@@ -12,6 +12,7 @@ public class BarrelCtrl : MonoBehaviour
     const float UP_FORCE = 1500.0f; // 위로 솟구치는 힘을 가함
     const float OVER_FORCE = 1200.0f;
 
+    [SerializeField] Transform barrelEffectTr;
     [SerializeField] GameObject expEffect;
     [SerializeField] Texture[] textures;
     [SerializeField] float radius = 10.0f;
@@ -49,7 +50,7 @@ public class BarrelCtrl : MonoBehaviour
     {
         // 폭발효과 파티클 생성
         GameObject exp = Instantiate(expEffect,
-            tr.position, Quaternion.identity);
+            tr.position, Quaternion.identity, barrelEffectTr);
         // 폭발효과 5초 후에 제거
         Destroy(exp, DESTROY_EXP);
         // Barrel의 무게를 가볍게 함

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RemoveBullet : MonoBehaviour
 {
+    public Transform bullectEffectTr;
     public GameObject sparkEffect;
 
     // 충돌이 시작할 때 발생하는 이벤트
@@ -18,7 +19,8 @@ public class RemoveBullet : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(-cp.normal);
             GameObject spark = Instantiate(sparkEffect,
                 collision.transform.position,
-                rot); //Quaternion.identity);
+                rot,     //Quaternion.identity);
+                bullectEffectTr);
             Destroy(spark, 0.5f);
             Destroy(collision.gameObject);
         }
