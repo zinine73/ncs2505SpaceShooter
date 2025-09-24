@@ -18,6 +18,9 @@ public class MonsterCtrl : MonoBehaviour
     readonly int hashTrace = Animator.StringToHash("IsTrace");
     readonly int hashAttack = Animator.StringToHash("IsAttack");
     readonly int hashHit = Animator.StringToHash("Hit");
+    readonly int hashPlayerDie = Animator.StringToHash("PlayerDie");
+    readonly int hashSpeed = Animator.StringToHash("Speed");
+
     Transform monsterTr;
     Transform playerTr;
     NavMeshAgent agent;
@@ -123,5 +126,20 @@ public class MonsterCtrl : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackDist);
         }
+    }
+
+    // void OnTriggerStay(Collider other)
+    // {
+    //     Debug.Log(other.gameObject.name);
+    // }
+
+    void OnPlayerDie()
+    {
+        // 몬스터의 상태를 체크하는 코루틴 함수를 정지
+        StopAllCoroutines();
+        // 추적을 정지하고 애니메이션을 수행
+        agent.isStopped = true;
+        anim.SetFloat(hashSpeed, Random.Range(0.8f, 1.2f));
+        anim.SetTrigger(hashPlayerDie);
     }
 }
