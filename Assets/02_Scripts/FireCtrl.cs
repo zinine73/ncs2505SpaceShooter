@@ -12,6 +12,15 @@ public class FireCtrl : MonoBehaviour
     public AudioClip fireSfx;
     new AudioSource audio;
     MeshRenderer muzzleFlash;
+    bool isPlayerDie = false;
+    void OnEnable()
+    {
+        PlayerCtrl.OnPlayerDie += OnPlayerDie;
+    }
+    void OnDisable()
+    {
+        PlayerCtrl.OnPlayerDie -= OnPlayerDie;
+    }
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -21,6 +30,8 @@ public class FireCtrl : MonoBehaviour
 
     void Update()
     {
+        if (isPlayerDie) return;
+
         // 마우스 왼쪽 클릭했을 때 Fire함수 호출
         if (Input.GetMouseButtonDown(0))
         {
@@ -54,5 +65,10 @@ public class FireCtrl : MonoBehaviour
         muzzleFlash.enabled = true;
         yield return new WaitForSeconds(0.2f);
         muzzleFlash.enabled = false;
+    }
+
+    void OnPlayerDie()
+    {
+        isPlayerDie = true;
     }
 }

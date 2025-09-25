@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class MonsterCtrl : MonoBehaviour
 {
     const float TIME_WAIT = 0.3f;
+    const int MAX_HP = 100;
+    const int DAMAGE = 10;
 
     // 몬스터의 상태 정보
     public enum State { IDLE, TRACE, ATTACK, DIE }
@@ -13,6 +15,8 @@ public class MonsterCtrl : MonoBehaviour
     public float traceDist = 10.0f;
     public float attackDist = 2.0f;
     public bool isDie = false;
+    [SerializeField] CapsuleCollider body;
+    [SerializeField] SphereCollider[] punch;
 
     // Animator parameter Hash값 추출
     readonly int hashTrace = Animator.StringToHash("IsTrace");
@@ -20,12 +24,27 @@ public class MonsterCtrl : MonoBehaviour
     readonly int hashHit = Animator.StringToHash("Hit");
     readonly int hashPlayerDie = Animator.StringToHash("PlayerDie");
     readonly int hashSpeed = Animator.StringToHash("Speed");
+    readonly int hashDie = Animator.StringToHash("Die");
 
     Transform monsterTr;
     Transform playerTr;
     NavMeshAgent agent;
     Animator anim;
     GameObject bloodEffect; // 혈흔 효과 프리팹
+    int hp = MAX_HP;
+
+    void OnEnable() // 스크립트가 활성화 될 때
+    {
+        // 이벤트 발생 시 수행할 함수 연결
+        PlayerCtrl.OnPlayerDie += OnPlayerDie;    
+    }
+
+    void OnDisable() // 스크립트가 비활성화 될 때
+    {
+        // 기존에 연결된 함수 해제
+        PlayerCtrl.OnPlayerDie -= OnPlayerDie;
+    }
+
     void Start()
     {
         // monsterTr
@@ -50,6 +69,9 @@ public class MonsterCtrl : MonoBehaviour
         while (!isDie)
         {
             yield return new WaitForSeconds(TIME_WAIT);
+            // 몬스터의 상태가 DIE일 때 코루틴 종료
+            if (state == State.DIE) yield break;
+
             float distance = Vector3.Distance(playerTr.position, monsterTr.position);
             if (distance <= attackDist)
             {
@@ -86,9 +108,25 @@ public class MonsterCtrl : MonoBehaviour
                     anim.SetBool(hashAttack, true);
                     break;
                 case State.DIE:
+                    isDie = true;
+                    agent.isStopped = true;
+                    anim.SetTrigger(hashDie);
+                    // 몬스터의 Collier 비활성화
+                    DisableCollider();
                     break;
             }
             yield return new WaitForSeconds(TIME_WAIT);
+        }
+    }
+
+    void DisableCollider()
+    {
+        // body
+        body.enabled = false;
+        // punch
+        foreach (var item in punch)
+        {
+            item.enabled = false;
         }
     }
 
@@ -105,6 +143,12 @@ public class MonsterCtrl : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(-collision.GetContact(0).normal);
             // bloodEffect 발생
             ShowBloodEffect(pos, rot);
+            // 몬스터의 hp 차감
+            hp -= DAMAGE;
+            if (hp <= 0)
+            {
+                state = State.DIE;
+            }
         }
     }
 
@@ -139,7 +183,10 @@ public class MonsterCtrl : MonoBehaviour
         StopAllCoroutines();
         // 추적을 정지하고 애니메이션을 수행
         agent.isStopped = true;
-        anim.SetFloat(hashSpeed, Random.Range(0.8f, 1.2f));
-        anim.SetTrigger(hashPlayerDie);
+        if (state != State.DIE)
+        {
+            anim.SetFloat(hashSpeed, Random.Range(0.8f, 1.2f));
+            anim.SetTrigger(hashPlayerDie);
+        }
     }
 }
