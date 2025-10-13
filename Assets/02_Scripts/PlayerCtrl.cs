@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class PlayerCtrl : MonoBehaviour
     Transform tr;
     Animation anim;
     float currHp;
+    Image hpBar;
     [SerializeField] float moveSpeed = 10.0f;
     [SerializeField] float turnSpeed = 80.0f;
 
@@ -23,6 +24,14 @@ public class PlayerCtrl : MonoBehaviour
 
     IEnumerator Start()
     {
+        // HPBar
+        //GameObject go = GameObject.FindGameObjectWithTag("HP_BAR");
+        //if (go != null)
+        //{
+        //    hpBar = go.GetComponent<Image>();
+        //} 
+        hpBar = GameObject.FindGameObjectWithTag("HP_BAR")?.GetComponent<Image>();
+
         currHp = INIT_HP;
         // Get Component
         //tr = this.gameObject.GetComponent<Transform>();
@@ -87,12 +96,18 @@ public class PlayerCtrl : MonoBehaviour
             //Debug.Log("Player HP = " + currHp / INIT_HP);
             //Debug.LogFormat("Player HP = {0}", currHp / INIT_HP);
             Debug.Log($"Player HP = {currHp / INIT_HP}");
+            DisaplyHealth();
 
             if (currHp <= 0.0f)
             {
                 PlayerDie();
             }
         }
+    }
+
+    void DisaplyHealth()
+    {
+        hpBar.fillAmount = currHp / INIT_HP;
     }
 
     void PlayerDie()
