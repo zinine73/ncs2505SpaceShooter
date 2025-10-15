@@ -3332,6 +3332,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: []
+  monster: {fileID: 6259534942839840376, guid: d3734fa07f3a7864ea18a36f69485f55, type: 3}
+  createTime: 3
 --- !u!4 &1952623248
 Transform:
   m_ObjectHideFlags: 0
