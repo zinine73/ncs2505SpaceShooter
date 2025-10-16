@@ -36,7 +36,12 @@ public class MonsterCtrl : MonoBehaviour
     void OnEnable() // 스크립트가 활성화 될 때
     {
         // 이벤트 발생 시 수행할 함수 연결
-        PlayerCtrl.OnPlayerDie += OnPlayerDie;    
+        PlayerCtrl.OnPlayerDie += OnPlayerDie;  
+
+        // 몬스터의 상태를 체크하는 코루틴
+        StartCoroutine(CheckMonsterState());
+        // 상태에 따라 몬스터의 행동을 수행하는 코루틴
+        StartCoroutine(MonsterAction());  
     }
 
     void OnDisable() // 스크립트가 비활성화 될 때
@@ -45,7 +50,7 @@ public class MonsterCtrl : MonoBehaviour
         PlayerCtrl.OnPlayerDie -= OnPlayerDie;
     }
 
-    void Start()
+    void Awake()
     {
         // monsterTr
         monsterTr = GetComponent<Transform>();
@@ -57,11 +62,6 @@ public class MonsterCtrl : MonoBehaviour
         anim = GetComponent<Animator>();
         // bloodEffect prefab load
         bloodEffect = Resources.Load<GameObject>("BloodSprayEffect");
-
-        // 몬스터의 상태를 체크하는 코루틴
-        StartCoroutine(CheckMonsterState());
-        // 상태에 따라 몬스터의 행동을 수행하는 코루틴
-        StartCoroutine(MonsterAction());
     }
 
     IEnumerator CheckMonsterState()
@@ -111,22 +111,32 @@ public class MonsterCtrl : MonoBehaviour
                     isDie = true;
                     agent.isStopped = true;
                     anim.SetTrigger(hashDie);
+                    
                     // 몬스터의 Collier 비활성화
-                    DisableCollider();
+                    EnableDisableCollider(false);
+                    // 일정 시간 대기 후 오브젝트 풀링으로 환원
+                    yield return new WaitForSeconds(3.0f);
+                    // 사망 후 다시 사용하기 위한 초기화
+                    hp = MAX_HP;
+                    isDie = false;
+                    EnableDisableCollider(true);
+                    state = State.IDLE;                    
+                    // 몬스터 비활성화
+                    this.gameObject.SetActive(false);
                     break;
             }
             yield return new WaitForSeconds(TIME_WAIT);
         }
     }
 
-    void DisableCollider()
+    void EnableDisableCollider(bool value)
     {
         // body
-        body.enabled = false;
+        body.enabled = value;
         // punch
         foreach (var item in punch)
         {
-            item.enabled = false;
+            item.enabled = value;
         }
     }
 
