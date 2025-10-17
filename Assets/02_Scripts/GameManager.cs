@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using Mono.Cecil.Cil;
 using UnityEngine;
+using TMPro;
+using UnityEditor;
 
 public class GameManager : MySingleton<GameManager>
 {
@@ -28,6 +30,8 @@ public class GameManager : MySingleton<GameManager>
             }
         }
     }
+    public TMP_Text scoreText;
+    int totScore = 0;
 
     // singleton
     /*
@@ -70,6 +74,10 @@ public class GameManager : MySingleton<GameManager>
         }
 
         InvokeRepeating("CreateMonster", 2.0f, createTime);
+
+        // show score
+        totScore = PlayerPrefs.GetInt("TOT_SCORE", 0);
+        DisplayScore(0);
     }
 
     void CreateMonster()
@@ -116,5 +124,24 @@ public class GameManager : MySingleton<GameManager>
             }
         }
         return null;
+    }
+
+    /// <summary>
+    /// 점수를 누적하고 출력
+    /// </summary>
+    /// <param name="score">누적할 점수</param>
+    public void DisplayScore(int score)
+    {
+        totScore += score;
+        scoreText.text = $"<color=#00ff00>SCORE : </color><color=#ff0000>{totScore:#,##0}</color>";
+        // save score
+        PlayerPrefs.SetInt("TOT_SCORE", totScore);
+    }
+
+    [MenuItem("zinine/Reset Score")]
+    public static void ResetScore()
+    {
+        PlayerPrefs.SetInt("TOT_SCORE", 0);
+        Debug.Log("Reset score...");
     }
 }

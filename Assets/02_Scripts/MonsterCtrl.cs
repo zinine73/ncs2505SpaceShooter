@@ -8,6 +8,7 @@ public class MonsterCtrl : MonoBehaviour
     const float TIME_WAIT = 0.3f;
     const int MAX_HP = 100;
     const int DAMAGE = 10;
+    const int SCORE_DIE = 50;
 
     // 몬스터의 상태 정보
     public enum State { IDLE, TRACE, ATTACK, DIE }
@@ -155,9 +156,11 @@ public class MonsterCtrl : MonoBehaviour
             ShowBloodEffect(pos, rot);
             // 몬스터의 hp 차감
             hp -= DAMAGE;
-            if (hp <= 0)
+            if ((hp <= 0) && (state != State.DIE))
             {
                 state = State.DIE;
+                // 사망했으므로 score 50점 추가
+                GameManager.Instance.DisplayScore(SCORE_DIE);
             }
         }
     }
