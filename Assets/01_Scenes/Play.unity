@@ -268,13 +268,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163554399}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.29, y: 0.06, z: 12}
   m_LocalScale: {x: 1.5, y: 0.1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1957314290}
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &173577051
 GameObject:
@@ -365,13 +365,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173577051}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.77, y: 0.06, z: 12}
   m_LocalScale: {x: 1.5, y: 0.1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1957314290}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &220267573
 GameObject:
@@ -475,11 +475,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_06
@@ -545,11 +545,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_08
@@ -662,11 +662,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_15
@@ -856,11 +856,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_02
@@ -1120,37 +1120,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603459108}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &669946629
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 669946630}
-  m_Layer: 0
-  m_Name: Temp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &669946630
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669946629}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676666823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,11 +1176,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 5954832467268492840, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1610,7 +1579,7 @@ PrefabInstance:
     - target: {fileID: 339768576967382924, guid: a789ea3d95a204740a22b63bcf574124, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 8252744873446057523, guid: a789ea3d95a204740a22b63bcf574124, type: 3}
       propertyPath: m_Name
       value: Wall_02
@@ -1671,11 +1640,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_16
@@ -1741,11 +1710,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_14
@@ -2046,11 +2015,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_09
@@ -2166,11 +2135,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_13
@@ -2363,7 +2332,7 @@ PrefabInstance:
     - target: {fileID: 339768576967382924, guid: a789ea3d95a204740a22b63bcf574124, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 8252744873446057523, guid: a789ea3d95a204740a22b63bcf574124, type: 3}
       propertyPath: m_Name
       value: Wall_03
@@ -2424,11 +2393,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_01
@@ -2564,11 +2533,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_12
@@ -2634,11 +2603,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_17
@@ -2923,11 +2892,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_04
@@ -3081,11 +3050,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_10
@@ -3286,7 +3255,7 @@ PrefabInstance:
     - target: {fileID: 339768576967382924, guid: a789ea3d95a204740a22b63bcf574124, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 8252744873446057523, guid: a789ea3d95a204740a22b63bcf574124, type: 3}
       propertyPath: m_Name
       value: Wall_04
@@ -3404,7 +3373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6a65e9eec5de64dbd2aa5c1f825bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCreateTr: {fileID: 669946630}
+  bulletCreateTr: {fileID: 0}
   bullet: {fileID: 7665852807707443600, guid: a7a49d9affa9b3c419e688c4ee9b37a5, type: 3}
   firePos: {fileID: 322597355}
   fireSfx: {fileID: 8300000, guid: 641ff25f5da444ddf8874d961a56f0c9, type: 3}
@@ -3544,11 +3513,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_11
@@ -3693,13 +3662,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708974012}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.81, y: 0.06, z: 12}
   m_LocalScale: {x: 1.5, y: 0.1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1957314290}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730154471
 GameObject:
@@ -3863,11 +3832,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 5954832467268492840, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4071,7 +4040,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957314289
 GameObject:
@@ -4125,6 +4094,9 @@ Transform:
   - {fileID: 1069252912}
   - {fileID: 968178989}
   - {fileID: 1273189854}
+  - {fileID: 173577055}
+  - {fileID: 163554403}
+  - {fileID: 1708974016}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4138,11 +4110,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel_05
@@ -4208,7 +4180,7 @@ PrefabInstance:
     - target: {fileID: 339768576967382924, guid: a789ea3d95a204740a22b63bcf574124, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 8252744873446057523, guid: a789ea3d95a204740a22b63bcf574124, type: 3}
       propertyPath: m_Name
       value: Wall_01
@@ -4325,7 +4297,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077829930
 GameObject:
@@ -4468,7 +4440,7 @@ RectTransform:
   - {fileID: 444207961}
   - {fileID: 887040237}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4485,11 +4457,11 @@ PrefabInstance:
     - target: {fileID: 2849039746910879722, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: bullectEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 2849039746910879723, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: barrelEffectTr
       value: 
-      objectReference: {fileID: 669946630}
+      objectReference: {fileID: 0}
     - target: {fileID: 6100195617425008513, guid: da65268e8aed91f429dc25fef47228b1, type: 3}
       propertyPath: m_Name
       value: Barrel
