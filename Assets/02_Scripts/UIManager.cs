@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         // UnityAction을 사용한 이벤트 연결 방식
-        action = () => OnButtonClick(startButton.name);
+        action = () => OnStartClick();
         startButton.onClick.AddListener(action);
 
         // 무명메서드를 사용
@@ -26,9 +27,15 @@ public class UIManager : MonoBehaviour
         shopButton.onClick.AddListener(
             () => OnButtonClick(shopButton.name));
     }
-    
+
     public void OnButtonClick(string msg)
     {
         Debug.Log($"Click Button : {msg}");
+    }
+    
+    public void OnStartClick()
+    {
+        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Play", LoadSceneMode.Additive);
     }
 }

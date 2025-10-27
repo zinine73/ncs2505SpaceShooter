@@ -34,7 +34,6 @@ public class GameManager : MySingleton<GameManager>
     int totScore = 0;
 
     // singleton
-    /*
     public static GameManager Instance = null;
     void Awake()
     {
@@ -48,7 +47,7 @@ public class GameManager : MySingleton<GameManager>
         }
         DontDestroyOnLoad(this.gameObject);
     }
-    */
+
     void Start()
     {
         // 몬스터 오브젝트 풀 생성
